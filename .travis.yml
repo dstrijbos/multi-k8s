@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project multi-k8s-231012
   - gcloud config set compute/zone europe-west4-a
   - gcloud container clusters get-credentials multi-cluster
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --passwword-stdin #login op docker, variables zijn toegevoegd aan travis
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin #login op docker, variables zijn toegevoegd aan travis
   - docker build -t david3dimerce/multi-k8s -f ./client/Dockerfile.dev ./client
 
 script:
